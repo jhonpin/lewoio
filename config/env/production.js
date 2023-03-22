@@ -48,10 +48,7 @@ module.exports = {
          ***************************************************************************/
         default: {
             adapter: 'sails-mongo',
-            url: 'mongodb://pinedajhon12:qDjpesyJGQa2kufT@ac-wzcy1o2-shard-00-00.rjeywli.mongodb.net:27017,ac-wzcy1o2-shard-00-01.rjeywli.mongodb.net:27017,ac-wzcy1o2-shard-00-02.rjeywli.mongodb.net:27017/lewoio',
-            ssl: true,
-            replicaSet: 'atlas-hoafh5-shard-0',
-            authSource: 'admin',
+            url: 'mongodb://pinedajhon12:qDjpesyJGQa2kufT@ac-wzcy1o2-shard-00-00.rjeywli.mongodb.net:27017,ac-wzcy1o2-shard-00-01.rjeywli.mongodb.net:27017,ac-wzcy1o2-shard-00-02.rjeywli.mongodb.net:27017/?ssl=true&replicaSet=atlas-hoafh5-shard-0&authSource=admin&retryWrites=true&w=majority/lewoio'
 
             // adapter: 'sails-mysql',
             // url: 'mysql://user:password@host:port/database',
