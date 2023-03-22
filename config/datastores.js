@@ -34,9 +34,6 @@ module.exports.datastores = {
 
     default: {
 
-        adapter: 'sails-mongo',
-        url: 'mongodb+srv://pinedajhon12:qDjpesyJGQa2kufT@lewoio.rjeywli.mongodb.net/lewoio'
-
         /***************************************************************************
          *                                                                          *
          * Want to use a different database during development?                     *
