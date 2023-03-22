@@ -47,6 +47,9 @@ module.exports = {
          *                                                                          *
          ***************************************************************************/
         default: {
+            adapter: 'sails-mongo',
+            url: 'mongodb+srv://pinedajhon12:qDjpesyJGQa2kufT@lewoio.rjeywli.mongodb.net/lewoio'
+
             // adapter: 'sails-mysql',
             // url: 'mysql://user:password@host:port/database',
             //--------------------------------------------------------------------------
