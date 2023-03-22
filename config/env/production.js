@@ -50,8 +50,6 @@ module.exports = {
             adapter: 'sails-mongo',
             url: 'mongodb://pinedajhon12:qDjpesyJGQa2kufT@ac-wzcy1o2-shard-00-00.rjeywli.mongodb.net:27017,ac-wzcy1o2-shard-00-01.rjeywli.mongodb.net:27017,ac-wzcy1o2-shard-00-02.rjeywli.mongodb.net:27017/?ssl=true&replicaSet=atlas-hoafh5-shard-0&authSource=admin&w=majority/lewoio'
 
-            // adapter: 'sails-mysql',
-            // url: 'mysql://user:password@host:port/database',
             //--------------------------------------------------------------------------
             //  /\   To avoid checking it in to version control, you might opt to set
             //  ||   sensitive credentials like `url` using an environment variable.
@@ -107,6 +105,8 @@ module.exports = {
         // cascadeOnDestroy: false,
 
     },
+
+
 
     /**************************************************************************
      *                                                                         *
@@ -237,7 +237,7 @@ module.exports = {
          *                                                                          *
          ***************************************************************************/
         cookie: {
-            secure: true,
+            // secure: true,
             maxAge: 24 * 60 * 60 * 1000, // 24 hours
         },
 
@@ -256,7 +256,6 @@ module.exports = {
      *                                                                          *
      ***************************************************************************/
     sockets: {
-        onlyAllowOrigins: ["https://letsworshipio.as.r.appspot.com", "http://localhost"]
 
         /***************************************************************************
          *                                                                          *
@@ -267,10 +266,10 @@ module.exports = {
          * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
          *                                                                          *
          ***************************************************************************/
-        // onlyAllowOrigins: [
-        //   'https://example.com',
-        //   'https://staging.example.com',
-        // ],
+        onlyAllowOrigins: [
+            'http://localhost',
+            'https://letsworshipio.as.r.appspot.com',
+        ],
 
 
         /***************************************************************************
@@ -342,7 +341,7 @@ module.exports = {
          * (https://sailsjs.com/config/http)                                        *
          *                                                                          *
          ***************************************************************************/
-        trustProxy: true,
+        // trustProxy: true,
 
     },
 
@@ -392,7 +391,7 @@ module.exports = {
      ***************************************************************************/
     custom: {
         baseUrl: 'https://letsworshipio.as.r.appspot.com',
-        //internalEmailAddress: 'support@example.com',
+        internalEmailAddress: 'support@example.com',
 
         // sendgridSecret: 'SG.fake.3e0Bn0qSQVnwb1E4qNPz9JZP5vLZYqjh7sn8S93oSHU',
         // stripeSecret: 'sk_prod__fake_Nfgh82401348jaDa3lkZ0d9Hm',
