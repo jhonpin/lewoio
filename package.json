@@ -13,10 +13,8 @@
         "sails-hook-organics": "^2.0.0",
         "sails-hook-orm": "^4.0.0",
         "sails-hook-sockets": "^2.0.0",
-        "sails-mongo": "^2.0.1"
-    },
-    "devDependencies": {
-        "eslint": "5.16.0",
+        "sails-mongo": "^2.0.1",
+        "sails-hook-grunt": "^5.0.0",
         "grunt": "^1.0.4",
         "grunt-babel": "8.0.0",
         "grunt-cli": "^1.4.3",
@@ -32,10 +30,12 @@
         "grunt-gcloud": "^0.2.1",
         "grunt-hash": "0.5.0",
         "grunt-sails-linker": "1.0.4",
-        "grunt-sync": "0.8.2",
+        "grunt-sync": "0.8.2"
+    },
+    "devDependencies": {
+        "eslint": "5.16.0",
         "htmlhint": "0.11.0",
-        "lesshint": "6.3.6",
-        "sails-hook-grunt": "^5.0.0"
+        "lesshint": "6.3.6"
     },
     "scripts": {
         "start": "NODE_ENV=production node app.js",
