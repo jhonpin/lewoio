@@ -17,9 +17,22 @@
     },
     "devDependencies": {
         "eslint": "5.16.0",
+        "grunt": "^1.0.4",
+        "grunt-cli": "^1.4.3",
+        "grunt-contrib-clean": "^2.0.1",
+        "grunt-contrib-coffee": "^2.1.0",
+        "grunt-contrib-concat": "^2.1.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-cssmin": "^4.0.0",
+        "grunt-contrib-jst": "^2.0.0",
+        "grunt-contrib-less": "^3.0.0",
+        "grunt-contrib-uglify": "^5.2.2",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-gcloud": "^0.2.1",
+        "grunt-sails-linker": "^1.0.4",
+        "grunt-sync": "^0.8.2",
         "htmlhint": "0.11.0",
         "lesshint": "6.3.6",
-        "grunt": "1.0.4",
         "sails-hook-grunt": "^5.0.0"
     },
     "scripts": {
