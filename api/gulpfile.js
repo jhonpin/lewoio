@@ -8,16 +8,16 @@ const webpack_config = require('./webpack.config.js');
 var exec = require('child_process').exec;
 
 const paths = {
-    prod_build: '../prod-build',
+    prod_build: '../_dist',
     server_file_name: 'api.bundle.js',
     vue_src: '../ui/dist/**/*',
-    vue_dist: '../prod-build/ui/dist',
+    vue_dist: '../_dist/ui/dist',
     zipped_file_name: 'mevn-prod.zip'
 };
 
 function clean() {
     log('removing the old files in the directory')
-    return del('../prod-build/**', { force: true });
+    return del('../_dist/**', { force: true });
 }
 
 function createProdBuildFolder() {

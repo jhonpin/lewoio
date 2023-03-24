@@ -1,0 +1,27 @@
+{
+    "name": "lewoio",
+    "version": "1.0.0",
+    "description": "Example Project on how to develop and build MEVN with an example project",
+    "main": "index.js",
+    "dependencies": {
+        "concurrently": "^7.6.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "update-ui": "cd ui && npm i",
+        "update-api": "cd api && npm i",
+        "update": "concurrently \"npm run update-ui\" \"npm run update-api\"",
+        "deploy": "npm run update && cd api && npm run build-prod",
+        "start": "npm run deploy && cd _dist/api && node api.bundle.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jhonpin/lewoio.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jhonpin/lewoio/issues"
+    },
+    "homepage": "https://github.com/jhonpin/lewoio#readme"
+}
