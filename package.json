@@ -11,8 +11,8 @@
         "update-ui": "cd ui && npm i",
         "update-api": "cd api && npm i",
         "update": "concurrently \"npm run update-ui\" \"npm run update-api\"",
-        "deploy": "npm run update && cd api && npm run build-prod",
-        "start": "npm run deploy && cd _dist/api && node api.bundle.js"
+        "build": "npm run update && cd api && npm run build-prod",
+        "start": "npm run build && cd _dist/api && node api.bundle.js"
     },
     "repository": {
         "type": "git",
