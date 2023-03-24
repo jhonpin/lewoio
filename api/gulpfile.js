@@ -8,16 +8,18 @@ const webpack_config = require('./webpack.config.js');
 var exec = require('child_process').exec;
 
 const paths = {
-    prod_build: '../_dist',
-    server_file_name: 'api.bundle.js',
+    prod_build: '../',
+    server_file_name: 'server.js',
     vue_src: '../ui/dist/**/*',
-    vue_dist: '../_dist/ui/dist',
-    zipped_file_name: 'mevn-prod.zip'
+    vue_dist: '../ui/dist',
+    zipped_file_name: 'dist.zip'
 };
 
 function clean() {
     log('removing the old files in the directory')
-    return del('../_dist/**', { force: true });
+    del('../server.js', { force: true });
+    del('../dist.zip', { force: true });
+    return del('../server.js.*', { force: true });
 }
 
 function createProdBuildFolder() {
@@ -50,7 +52,7 @@ function copyVueCodeTask() {
 function copyNodeJSCodeTask() {
     log('building and copying server code into the directory')
     return webpack_stream(webpack_config)
-        .pipe(dest(`${paths.prod_build}/api/`))
+        .pipe(dest(`${paths.prod_build}/`))
 }
 
 function zippingTask() {

@@ -9,7 +9,7 @@ console.log('ENVIRONMENT:::::', environment);
 
 let ENVIRONMENT_VARIABLES = {
     'process.env.ENVIRONMENT': JSON.stringify('production'),
-    'process.env.PORT': JSON.stringify('80'),
+    'process.env.PORT': JSON.stringify('3080'),
     'process.env.MONGO_CONNECTION_STRING': JSON.stringify('mongodb+srv://pinedajhon12:qDjpesyJGQa2kufT@lewoio.rjeywli.mongodb.net/?retryWrites=true&w=majority')
 };
 
@@ -32,7 +32,7 @@ module.exports = {
     entry: './server.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'api.bundle.js',
+        filename: 'server.js',
     },
     target: 'node',
     plugins: [
