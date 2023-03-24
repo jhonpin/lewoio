@@ -12,13 +12,13 @@ const paths = {
     server_file_name: 'server.js',
     vue_src: '../ui/dist/**/*',
     vue_dist: '../ui/dist',
-    zipped_file_name: 'dist.zip'
+    //zipped_file_name: 'dist.zip'
 };
 
 function clean() {
     log('removing the old files in the directory')
     del('../server.js', { force: true });
-    del('../dist.zip', { force: true });
+    //del('../dist.zip', { force: true });
     del('../ui/dist', { force: true });
     return del('../server.js.*', { force: true });
 }
@@ -56,17 +56,17 @@ function copyNodeJSCodeTask() {
         .pipe(dest(`${paths.prod_build}/`))
 }
 
-function zippingTask() {
-    log('zipping the code ')
-    return src(`${paths.prod_build}/**`)
-        .pipe(zip(`${paths.zipped_file_name}`))
-        .pipe(dest(`${paths.prod_build}`))
-}
+// function zippingTask() {
+//     log('zipping the code ')
+//     return src(`${paths.prod_build}/server.js`)
+//         .pipe(zip(`${paths.zipped_file_name}`))
+//         .pipe(dest(`${paths.prod_build}`))
+// }
 
 exports.default = series(
     clean,
     createProdBuildFolder,
     buildVueCodeTask,
-    parallel(copyVueCodeTask, copyNodeJSCodeTask),
-    zippingTask
+    parallel(copyVueCodeTask, copyNodeJSCodeTask)
+    //zippingTask
 );
