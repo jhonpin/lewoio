@@ -19,6 +19,7 @@ function clean() {
     log('removing the old files in the directory')
     del('../server.js', { force: true });
     del('../dist.zip', { force: true });
+    del('../ui/dist', { force: true });
     return del('../server.js.*', { force: true });
 }
 
