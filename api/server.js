@@ -13,7 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
 const taskController = require('./controller/task.controller')
 
 const app = express();
-const port = process.env.PORT || 3080;
+const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, '/ui/dist')));
 
