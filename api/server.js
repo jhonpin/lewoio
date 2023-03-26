@@ -12,14 +12,36 @@ if (process.env.NODE_ENV !== 'production') {
 
 const taskController = require('./controller/task.controller')
 
-
-
 const app = express();
 const port = process.env.PORT || 3080;
 
 app.use(express.static(path.join(__dirname, '/ui/dist')));
 
 app.use(bodyParser.json());
+
+const onWebhook = (req, res) => {
+    let hmac = crypto.createHmac('sha1', process.env.SECRET);
+    let sig = `sha1=${hmac.update(JSON.stringify(req.body)).digest('hex')}`;
+
+    if (req.headers['x-github-event'] === 'push' && sig === req.headers['x-hub-signature']) {
+        cmd.run('chmod 777 ./git.sh');
+
+        cmd.get('./git.sh', (err, data) => {
+            if (data) {
+                console.log(data);
+            }
+            if (err) {
+                console.log(err);
+            }
+        })
+
+        cmd.run('refresh');
+    }
+
+    return res.sendStatus(200);
+}
+
+app.post('/git', onWebhook);
 
 app.get('/api/tasks', (req, res) => {
     taskController.getTasks().then(data => res.json(data));
