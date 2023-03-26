@@ -42,6 +42,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/ui/dist/index.html'));
 });
 
-app.listen(port, () => {
+const listener = app.listen(port, () => {
     console.log(`Server listening on the port  ${port}`);
-})
+});
